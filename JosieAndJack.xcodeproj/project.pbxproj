@@ -15,6 +15,8 @@
 		387EFE601DBD742C00742444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387EFE5E1DBD742C00742444 /* LaunchScreen.storyboard */; };
 		387EFE6B1DBD742C00742444 /* JosieAndJackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE6A1DBD742C00742444 /* JosieAndJackTests.swift */; };
 		387EFE761DBD742C00742444 /* JosieAndJackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE751DBD742C00742444 /* JosieAndJackUITests.swift */; };
+		387EFE841DBD748600742444 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE831DBD748600742444 /* Constants.swift */; };
+		387EFE861DBD7A3900742444 /* Date_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE851DBD7A3900742444 /* Date_extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		387EFE711DBD742C00742444 /* JosieAndJackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JosieAndJackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		387EFE751DBD742C00742444 /* JosieAndJackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JosieAndJackUITests.swift; sourceTree = "<group>"; };
 		387EFE771DBD742C00742444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		387EFE831DBD748600742444 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		387EFE851DBD7A3900742444 /* Date_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date_extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				387EFE521DBD742C00742444 /* AppDelegate.swift */,
+				387EFE831DBD748600742444 /* Constants.swift */,
 				387EFE541DBD742C00742444 /* ViewController.swift */,
+				387EFE851DBD7A3900742444 /* Date_extension.swift */,
 				387EFE561DBD742C00742444 /* Main.storyboard */,
 				387EFE5C1DBD742C00742444 /* Assets.xcassets */,
 				387EFE5E1DBD742C00742444 /* LaunchScreen.storyboard */,
@@ -268,6 +274,8 @@
 				387EFE551DBD742C00742444 /* ViewController.swift in Sources */,
 				387EFE531DBD742C00742444 /* AppDelegate.swift in Sources */,
 				387EFE5B1DBD742C00742444 /* JosieAndJack.xcdatamodeld in Sources */,
+				387EFE841DBD748600742444 /* Constants.swift in Sources */,
+				387EFE861DBD7A3900742444 /* Date_extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
