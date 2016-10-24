@@ -16,17 +16,20 @@ class SecondSplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("SecondSplashViewController viewDidLoad")
         // Do any additional setup after loading the view.
         
-        for label in self.labels {
-            label.isHidden = true
-        }
+       // hideEverything()
         
         
         
     }
 
+    func hideEverything() {
+        for label in self.labels {
+            label.isHidden = true
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,13 +37,39 @@ class SecondSplashViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("SecondSplashViewController viewDidAppear")
-            performSegue(withIdentifier: Constants.Segues.splashToMain, sender: nil)
+
+        
+        animateLabels()
         
     }
     
+    func goToNextView(){
+        performSegue(withIdentifier: Constants.Segues.splashToMain, sender: nil)
+    }
+    
+    func animateLabels() {
+        
+        let sizeOfDevice = self.view.bounds.maxY
+        let centerOfDevice = self.view.bounds.maxX / 2
+         
+        
+        UIView.animate(withDuration: 0.3, delay: 0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.5, options: .curveLinear, animations: {
+            
+            
+            self.labels[0].center = CGPoint(x: centerOfDevice, y: sizeOfDevice + self.labels[0].frame.height + 10)
+            self.labels[1].center = CGPoint(x: centerOfDevice, y: sizeOfDevice + self.labels[1].frame.height + 50)
+            
+            
+            }, completion: {
+                (value: Bool) in
+                self.goToNextView()
+            }
+        
+            
+        )
     
     
+    }
    
 
     

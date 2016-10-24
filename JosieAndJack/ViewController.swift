@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         
 
         
-        UIView.animate(withDuration: 1.1, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 1.1, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
             
             self.labels.forEach {
                 $0.isHidden = !$0.isHidden
