@@ -17,6 +17,9 @@
 		387EFE761DBD742C00742444 /* JosieAndJackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE751DBD742C00742444 /* JosieAndJackUITests.swift */; };
 		387EFE841DBD748600742444 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE831DBD748600742444 /* Constants.swift */; };
 		387EFE861DBD7A3900742444 /* Date_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE851DBD7A3900742444 /* Date_extension.swift */; };
+		387EFE881DBDA0F400742444 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE871DBDA0F400742444 /* Kid.swift */; };
+		387EFE8A1DBDA41300742444 /* UIColor_extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE891DBDA41300742444 /* UIColor_extention.swift */; };
+		387EFE8C1DBDB07500742444 /* SecondSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EFE8B1DBDB07500742444 /* SecondSplashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		387EFE771DBD742C00742444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		387EFE831DBD748600742444 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		387EFE851DBD7A3900742444 /* Date_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date_extension.swift; sourceTree = "<group>"; };
+		387EFE871DBDA0F400742444 /* Kid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
+		387EFE891DBDA41300742444 /* UIColor_extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_extention.swift; sourceTree = "<group>"; };
+		387EFE8B1DBDB07500742444 /* SecondSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondSplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +111,11 @@
 			children = (
 				387EFE521DBD742C00742444 /* AppDelegate.swift */,
 				387EFE831DBD748600742444 /* Constants.swift */,
+				387EFE871DBDA0F400742444 /* Kid.swift */,
 				387EFE541DBD742C00742444 /* ViewController.swift */,
+				387EFE8B1DBDB07500742444 /* SecondSplashViewController.swift */,
 				387EFE851DBD7A3900742444 /* Date_extension.swift */,
+				387EFE891DBDA41300742444 /* UIColor_extention.swift */,
 				387EFE561DBD742C00742444 /* Main.storyboard */,
 				387EFE5C1DBD742C00742444 /* Assets.xcassets */,
 				387EFE5E1DBD742C00742444 /* LaunchScreen.storyboard */,
@@ -273,8 +282,11 @@
 			files = (
 				387EFE551DBD742C00742444 /* ViewController.swift in Sources */,
 				387EFE531DBD742C00742444 /* AppDelegate.swift in Sources */,
+				387EFE8C1DBDB07500742444 /* SecondSplashViewController.swift in Sources */,
+				387EFE881DBDA0F400742444 /* Kid.swift in Sources */,
 				387EFE5B1DBD742C00742444 /* JosieAndJack.xcdatamodeld in Sources */,
 				387EFE841DBD748600742444 /* Constants.swift in Sources */,
+				387EFE8A1DBDA41300742444 /* UIColor_extention.swift in Sources */,
 				387EFE861DBD7A3900742444 /* Date_extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

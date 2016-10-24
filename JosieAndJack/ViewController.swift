@@ -15,6 +15,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var diego: UILabel!
     @IBOutlet weak var allie: UILabel!
     
+    @IBOutlet var labels: [UILabel]! {
+        didSet {
+            labels.forEach {
+                $0.isHidden = true
+            }
+        }
+    }
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,13 +40,34 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+
+        
+        UIView.animate(withDuration: 1.1, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            
+            self.labels.forEach {
+                $0.isHidden = !$0.isHidden
+            }
+            }, completion: nil)
+        
+        
+        //*
+        
+        
+    }
+    
     
     func setupiew() {
+        
+        view.backgroundColor = UIColor.Palette.PlayfullKids.lightBlue()
+        
+        
         josie.text = "Josie is \(Constants.Birthdays.josie.toAge())."
-        jack.text = "Jack is \(Constants.Birthdays.jack.toAge())/"
+        jack.text = "Jack is \(Constants.Birthdays.jack.toAge())."
         diego.text = "Diego is \(Constants.Birthdays.diego.toAge())."
         allie.text = "Allie is \(Constants.Birthdays.allie.toAge())."
-        
     }
     
 

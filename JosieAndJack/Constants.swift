@@ -29,12 +29,19 @@ struct Constants {
     }
     
     
+    struct Segues {
+    
+        static let splashToMain =  "splashToMain"
+    }
     
     
-    struct geoLocations {
+    struct GeoLocations {
         
         static let jacksHouse =  ""  // ... ?d
     }
+    
+    
+    
     
 }
 
