@@ -1,5 +1,5 @@
 //
-//  SecondSplashViewController.swift
+//  SecondSplashVC.swift
 //  JosieAndJack
 //
 //  Created by Jim Wilson on 10/23/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondSplashViewController: UIViewController {
+class SecondSplashVC: UIViewController {
 
     
     @IBOutlet var labels: [UILabel]!

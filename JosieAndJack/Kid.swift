@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Kid {
+class KidModel {
     var name: String?
     var birthday: Date?
 }
