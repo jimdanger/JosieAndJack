@@ -14,7 +14,7 @@ extension UIColor {
     
     struct Palette {
         
-        struct PlayfullKids { // https://coolors.co/c2f9bb-9ad1d4-62c370-cc3363-20063b
+        struct PlayfullKids { // See, https://coolors.co/c2f9bb-9ad1d4-62c370-cc3363-20063b
             
             static func lightGreen() -> UIColor {
                 return UIColor(colorLiteralRed: 194.0 / 255.0, green: 249.0 / 255.0, blue: 187.0 / 255.0, alpha: 1)
@@ -35,28 +35,12 @@ extension UIColor {
             static func darkPurple() -> UIColor {
                 return UIColor(colorLiteralRed: 32.0 / 255.0, green: 6.0 / 255.0, blue: 59.0 / 255.0, alpha: 1)
             }
-            
-            
-            
-            
-            
         }
         
         struct Another {
             static func boringColor() -> UIColor {
                 return UIColor(colorLiteralRed: 154.0 / 255.0, green: 209.0 / 255.0, blue: 212.0 / 255.0, alpha: 1)
             }
-            
-            
-            
         }
-            
-        
-        
-        
-        
     }
-    
-   
-
 }

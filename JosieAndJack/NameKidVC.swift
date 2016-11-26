@@ -15,8 +15,7 @@ class NameKidVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        Session.instance.bark()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,11 +23,7 @@ class NameKidVC: UIViewController {
     }
     
 
-    
-
     // MARK: - Navigation
-
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let vc = segue.destination as? BirthdayVC {
@@ -37,7 +32,6 @@ class NameKidVC: UIViewController {
     }
  
     // MARK: - Buttons
-    
     @IBAction func nextPressed(_ sender: Any) {
         print(textField.text!)
         
@@ -46,5 +40,4 @@ class NameKidVC: UIViewController {
         }
         performSegue(withIdentifier: "next", sender: self)
     }
-
 }
