@@ -38,7 +38,6 @@ class SaveAPI {
         }
     }
     
-    
     func fetchAll() -> [Kid] {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -66,16 +65,9 @@ class SaveAPI {
                 }
                 kids.append(kid)
             }
-            
-            // kids[0].value(forKey: "birthday")!
-            // kids[0].value(forKey: "name")!
-            
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        
-        let _ = ""
-        
         return kids
     }
 }

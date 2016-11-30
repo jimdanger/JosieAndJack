@@ -13,11 +13,8 @@ struct Constants {
     struct Birthdays {
         
         // Jack = 3/3/15 at 3:00pm
-        
         // Allie: Born to Kim and Elizabeth Billeter on August 27th, 2014 at 3:08 PM and weighing in at 9 lb 14 oz she is 21” long,
-        
         // Josie: june 21, 2013
-        
         // Diego: ??
         
         // see, http://stackoverflow.com/questions/24089999/how-do-you-create-a-swift-date-object
@@ -26,24 +23,19 @@ struct Constants {
         static let josie: Date = Date(timeIntervalSince1970: 1371787200)
         static let allie: Date = Date(timeIntervalSince1970: 1409112000)
         static let diego: Date = Date(timeIntervalSince1970: 1465790400)
-        
-
+     
     }
     
-    
+
     struct Segues {
-    
+
         static let splashToMain =  "splashToMain"
     }
-    
     
     struct GeoLocations {
         
         static let jacksHouse =  ""  // ... ?d
     }
-    
-    
-    
     
 }
 

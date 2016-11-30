@@ -12,10 +12,18 @@ class NameKidVC: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     var kidName: String?
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Session.instance.bark()
+//        Session.instance.bark()
+        setupView()
+    }
+    
+    func setupView() {
+        view.backgroundColor = UIColor.Palette.PlayfullKids.lightBlue()
+        nextButton.backgroundColor = UIColor.Palette.PlayfullKids.pink()
+       
     }
 
     override func didReceiveMemoryWarning() {
