@@ -25,17 +25,13 @@ class BirthdayVC: UIViewController {
     func setupView(){
         view.backgroundColor = UIColor.Palette.PlayfullKids.lightBlue()
         doneButton.backgroundColor = UIColor.Palette.PlayfullKids.pink()
-        
-    
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
 
-    
     @IBAction func donePressed(_ sender: Any) {
         done()
     }

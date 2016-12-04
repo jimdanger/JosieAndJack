@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IJL-qp-pft">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Oga-E6-qsM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,28 +20,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9pV-yD-TXC">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esn-IA-Noj">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="162"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="21"/>
                                         <color key="textColor" red="0.12645581364631653" green="0.025183623656630516" blue="0.23152652382850647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sg-O7-evR">
-                                        <rect key="frame" x="0.0" y="162" width="343" height="161.5"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="21"/>
                                         <color key="textColor" red="0.12645581359999999" green="0.025183623660000001" blue="0.23152652379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ad-0d-DNv">
-                                        <rect key="frame" x="0.0" y="323.5" width="343" height="162"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="21"/>
                                         <color key="textColor" red="0.12645581359999999" green="0.025183623660000001" blue="0.23152652379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FR-40-F1J">
-                                        <rect key="frame" x="0.0" y="485.5" width="343" height="161.5"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="21"/>
                                         <color key="textColor" red="0.12645581359999999" green="0.025183623660000001" blue="0.23152652379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -73,6 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33" y="-682"/>
         </scene>
         <!--Name-->
         <scene sceneID="X7n-aD-Ooo">
@@ -87,19 +80,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kid's name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdy-IW-vPh">
-                                <rect key="frame" x="150" y="85" width="75.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bpa-xx-bfT">
-                                <rect key="frame" x="26" y="111.5" width="323" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiB-sp-t0Q">
-                                <rect key="frame" x="-4" y="163.5" width="383" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.042789684448148457" blue="0.89062641766537676" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="32B-nj-GFn"/>
@@ -152,13 +142,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kid's Birthday:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nN3-ms-MQd">
-                                <rect key="frame" x="137.5" y="85" width="100" height="18.5"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gIW-u5-IQg">
-                                <rect key="frame" x="16" y="118.5" width="343" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="sLq-A4-yCw"/>
                                 </constraints>
@@ -167,7 +155,6 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOz-ZY-9kK">
-                                <rect key="frame" x="0.0" y="327.5" width="375" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.042789684449999997" blue="0.89062641769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ac2-nt-fUM"/>
@@ -218,13 +205,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Josie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-Ka-sLF">
-                                <rect key="frame" x="148.5" y="312" width="78.5" height="43.5"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                 <color key="textColor" red="0.12645581359999999" green="0.025183623660000001" blue="0.23152652379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How old are they again?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPd-lP-FJe">
-                                <rect key="frame" x="114.5" y="427" width="146.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
                                 <color key="textColor" red="0.12645581359999999" green="0.025183623660000001" blue="0.23152652379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -246,7 +231,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X55-rj-6NS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="37"/>
+            <point key="canvasLocation" x="-852" y="15"/>
+        </scene>
+        <!--MainVC-->
+        <scene sceneID="KQg-k9-kcJ">
+            <objects>
+                <viewController id="Oga-E6-qsM" customClass="MainVC" customModule="JosieAndJack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W4W-Jh-OKN"/>
+                        <viewControllerLayoutGuide type="bottom" id="xha-S5-t4X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iao-ER-s31">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ta5-qd-Hlp">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainCell" id="JgU-rn-xZH" customClass="MainCell" customModule="JosieAndJack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JgU-rn-xZH" id="rpK-Lx-FaU">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeF-Ms-KPP">
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WeF-Ms-KPP" firstAttribute="centerY" secondItem="rpK-Lx-FaU" secondAttribute="centerY" id="JoT-UX-vT0"/>
+                                                <constraint firstItem="WeF-Ms-KPP" firstAttribute="centerX" secondItem="rpK-Lx-FaU" secondAttribute="centerX" id="y47-cn-qyd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="WeF-Ms-KPP" id="bd4-M3-20y"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NBQ-YX-NRi" id="my0-1v-UPM"/>
+                                    <outlet property="delegate" destination="NBQ-YX-NRi" id="uFq-AF-4Qe"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ta5-qd-Hlp" firstAttribute="leading" secondItem="Iao-ER-s31" secondAttribute="leading" id="1LL-8m-eD1"/>
+                            <constraint firstItem="Ta5-qd-Hlp" firstAttribute="top" secondItem="W4W-Jh-OKN" secondAttribute="bottom" id="1mg-AI-uPz"/>
+                            <constraint firstItem="xha-S5-t4X" firstAttribute="top" secondItem="Ta5-qd-Hlp" secondAttribute="bottom" id="BUl-x2-qt0"/>
+                            <constraint firstAttribute="trailing" secondItem="Ta5-qd-Hlp" secondAttribute="trailing" id="Mtg-oP-Cby"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataSourceAndDelegate" destination="NBQ-YX-NRi" id="Rtn-Zr-Osc"/>
+                        <outlet property="tableView" destination="Ta5-qd-Hlp" id="vze-F9-1Oh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="isM-6o-Udm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="NBQ-YX-NRi" customClass="MainDataSourceDelegate" customModule="JosieAndJack" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="14.842578710644679"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cD7-19-m5d">

@@ -16,7 +16,6 @@ class NameKidVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        Session.instance.bark()
         setupView()
     }
     
