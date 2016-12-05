@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Oga-E6-qsM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xcj-xM-VeD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -65,7 +65,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="-682"/>
+            <point key="canvasLocation" x="33" y="-1397"/>
+        </scene>
+        <!--Main Stack ViewVC-->
+        <scene sceneID="pNI-fO-wOd">
+            <objects>
+                <viewController id="2qg-eR-EEt" customClass="MainStackViewVC" customModule="JosieAndJack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p6u-Em-5Xc"/>
+                        <viewControllerLayoutGuide type="bottom" id="LPw-q9-Yyg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xSL-La-evj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbb-lm-h5w">
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="+ add kid">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPressed:" destination="2qg-eR-EEt" eventType="touchUpInside" id="43K-Sa-nEn"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tee-r2-uUG"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tee-r2-uUG" secondAttribute="trailing" id="6uo-P3-ItV"/>
+                            <constraint firstItem="Jbb-lm-h5w" firstAttribute="top" secondItem="p6u-Em-5Xc" secondAttribute="bottom" constant="15" id="QmD-nQ-mo4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jbb-lm-h5w" secondAttribute="trailing" constant="20" id="e16-do-AuG"/>
+                            <constraint firstItem="tee-r2-uUG" firstAttribute="top" secondItem="p6u-Em-5Xc" secondAttribute="bottom" constant="59" id="iTv-uO-g1g"/>
+                            <constraint firstItem="LPw-q9-Yyg" firstAttribute="top" secondItem="tee-r2-uUG" secondAttribute="bottom" id="pdn-aG-naq"/>
+                            <constraint firstItem="tee-r2-uUG" firstAttribute="leading" secondItem="xSL-La-evj" secondAttribute="leadingMargin" id="zrI-ix-l5z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="tee-r2-uUG" id="ndI-15-b9w"/>
+                        <segue destination="IJL-qp-pft" kind="show" identifier="next" id="c84-Mq-NIv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mz1-g3-Ly1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="14.842578710644679"/>
         </scene>
         <!--Name-->
         <scene sceneID="X7n-aD-Ooo">
@@ -98,6 +140,9 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextPressed:" destination="2LE-RR-Tm1" eventType="touchUpInside" id="1Jv-aZ-nIl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,13 +157,7 @@
                             <constraint firstItem="gdy-IW-vPh" firstAttribute="centerX" secondItem="KhG-GX-9N8" secondAttribute="centerX" id="fgs-Mr-6Q7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Name" id="FXg-7C-5gz">
-                        <barButtonItem key="rightBarButtonItem" title="next" id="WQp-gr-dbR">
-                            <connections>
-                                <action selector="nextPressed:" destination="2LE-RR-Tm1" id="se7-7n-dhj"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Name" id="FXg-7C-5gz"/>
                     <connections>
                         <outlet property="nextButton" destination="hiB-sp-t0Q" id="rfp-s4-wLm"/>
                         <outlet property="textField" destination="bpa-xx-bfT" id="po2-q4-Q8x"/>
@@ -127,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Vu-jk-GFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="697.60119940029995"/>
+            <point key="canvasLocation" x="978" y="848"/>
         </scene>
         <!--Birthday-->
         <scene sceneID="Ea4-Rx-bmw">
@@ -190,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6s-WZ-zKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909.5999999999999" y="696.7016491754124"/>
+            <point key="canvasLocation" x="1914" y="848"/>
         </scene>
         <!--Second SplashVC-->
         <scene sceneID="k4t-0T-MeZ">
@@ -226,7 +265,8 @@
                     <connections>
                         <outletCollection property="labels" destination="DSD-Ka-sLF" collectionClass="NSMutableArray" id="Aze-4o-toN"/>
                         <outletCollection property="labels" destination="WPd-lP-FJe" collectionClass="NSMutableArray" id="JxL-NO-0J7"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="splashToMain" animates="NO" id="wit-Ms-HBJ"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="splashToHardCode" animates="NO" id="wit-Ms-HBJ"/>
+                        <segue destination="2qg-eR-EEt" kind="show" identifier="next" animates="NO" id="Mee-Jm-cYB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X55-rj-6NS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -293,7 +333,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isM-6o-Udm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="NBQ-YX-NRi" customClass="MainDataSourceDelegate" customModule="JosieAndJack" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="14.842578710644679"/>
+            <point key="canvasLocation" x="-852" y="-843"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cD7-19-m5d">
@@ -311,7 +351,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caA-2D-ejW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="697.60119940029995"/>
+            <point key="canvasLocation" x="33" y="848"/>
         </scene>
     </scenes>
 </document>

@@ -10,6 +10,8 @@
 		1A14FF1D1DF47F5B00A7AB34 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14FF1C1DF47F5B00A7AB34 /* MainVC.swift */; };
 		1A14FF201DF47FA600A7AB34 /* MainDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14FF1F1DF47FA600A7AB34 /* MainDataSourceDelegate.swift */; };
 		1A14FF221DF4817C00A7AB34 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14FF211DF4817C00A7AB34 /* MainCell.swift */; };
+		1A14FF241DF4891200A7AB34 /* MainStackViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14FF231DF4891200A7AB34 /* MainStackViewVC.swift */; };
+		1A14FF261DF49D8F00A7AB34 /* AddKidDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14FF251DF49D8F00A7AB34 /* AddKidDelegate.swift */; };
 		3824C34E1DE8CAA70095BC50 /* NameKidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824C34D1DE8CAA70095BC50 /* NameKidVC.swift */; };
 		3824C3501DE8D0540095BC50 /* BirthdayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824C34F1DE8D0540095BC50 /* BirthdayVC.swift */; };
 		3824C3541DE9F69F0095BC50 /* SaveAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824C3531DE9F69F0095BC50 /* SaveAPI.swift */; };
@@ -49,6 +51,8 @@
 		1A14FF1C1DF47F5B00A7AB34 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		1A14FF1F1DF47FA600A7AB34 /* MainDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDataSourceDelegate.swift; sourceTree = "<group>"; };
 		1A14FF211DF4817C00A7AB34 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		1A14FF231DF4891200A7AB34 /* MainStackViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStackViewVC.swift; sourceTree = "<group>"; };
+		1A14FF251DF49D8F00A7AB34 /* AddKidDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKidDelegate.swift; sourceTree = "<group>"; };
 		3824C34D1DE8CAA70095BC50 /* NameKidVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameKidVC.swift; sourceTree = "<group>"; };
 		3824C34F1DE8D0540095BC50 /* BirthdayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayVC.swift; sourceTree = "<group>"; };
 		3824C3531DE9F69F0095BC50 /* SaveAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveAPI.swift; sourceTree = "<group>"; };
@@ -98,21 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A14FF1E1DF47F9400A7AB34 /* MainVC */ = {
+		1A14FF1E1DF47F9400A7AB34 /* MainTableVC */ = {
 			isa = PBXGroup;
 			children = (
 				1A14FF1C1DF47F5B00A7AB34 /* MainVC.swift */,
 				1A14FF1F1DF47FA600A7AB34 /* MainDataSourceDelegate.swift */,
 				1A14FF211DF4817C00A7AB34 /* MainCell.swift */,
 			);
-			name = MainVC;
+			name = MainTableVC;
 			sourceTree = "<group>";
 		};
 		3824C34C1DE8CA800095BC50 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
 				387EFE541DBD742C00742444 /* ViewController.swift */,
-				1A14FF1E1DF47F9400A7AB34 /* MainVC */,
+				1A14FF1E1DF47F9400A7AB34 /* MainTableVC */,
+				1A14FF231DF4891200A7AB34 /* MainStackViewVC.swift */,
+				1A14FF251DF49D8F00A7AB34 /* AddKidDelegate.swift */,
 				3824C34D1DE8CAA70095BC50 /* NameKidVC.swift */,
 				3824C34F1DE8D0540095BC50 /* BirthdayVC.swift */,
 				387EFE8B1DBDB07500742444 /* SecondSplashVC.swift */,
@@ -335,11 +341,13 @@
 				387EFE531DBD742C00742444 /* AppDelegate.swift in Sources */,
 				3824C34E1DE8CAA70095BC50 /* NameKidVC.swift in Sources */,
 				387EFE8C1DBDB07500742444 /* SecondSplashVC.swift in Sources */,
+				1A14FF241DF4891200A7AB34 /* MainStackViewVC.swift in Sources */,
 				387EFE881DBDA0F400742444 /* Kid.swift in Sources */,
 				387EFE5B1DBD742C00742444 /* JosieAndJack.xcdatamodeld in Sources */,
 				387EFE841DBD748600742444 /* Constants.swift in Sources */,
 				1A14FF221DF4817C00A7AB34 /* MainCell.swift in Sources */,
 				3824C3541DE9F69F0095BC50 /* SaveAPI.swift in Sources */,
+				1A14FF261DF49D8F00A7AB34 /* AddKidDelegate.swift in Sources */,
 				1A14FF201DF47FA600A7AB34 /* MainDataSourceDelegate.swift in Sources */,
 				387EFE8A1DBDA41300742444 /* UIColor_extention.swift in Sources */,
 				387EFE861DBD7A3900742444 /* Date_extension.swift in Sources */,

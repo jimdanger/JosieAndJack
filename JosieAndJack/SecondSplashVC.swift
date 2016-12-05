@@ -38,13 +38,11 @@ class SecondSplashVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        
-        animateLabels()
-        
+        animateLabels()        
     }
     
     func goToNextView(){
-        performSegue(withIdentifier: Constants.StoryboardIds.Segues.splashToMain, sender: nil)
+        performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: nil)
     }
     
     func animateLabels() {

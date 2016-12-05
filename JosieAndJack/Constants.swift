@@ -31,9 +31,11 @@ struct Constants {
     
     struct StoryboardIds {
         
-        struct Segues {
+        enum Segues: String {
+            case
+            splashToHardCode =  "splashToHardCode",
+            next =  "next"
             
-            static let splashToMain =  "splashToMain"
         }
         struct CellReuseIds {
             

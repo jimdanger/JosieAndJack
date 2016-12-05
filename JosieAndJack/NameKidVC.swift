@@ -12,6 +12,7 @@ class NameKidVC: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     var kidName: String?
+    var addKidDelegate: AddKidDelegate?
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
@@ -34,17 +35,19 @@ class NameKidVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let vc = segue.destination as? BirthdayVC {
-           vc.name = kidName
+            vc.name = kidName
+            vc.addKidDelegate = addKidDelegate
         }
     }
- 
+  
     // MARK: - Buttons
-    @IBAction func nextPressed(_ sender: Any) {
+    @IBAction func nextPressed(_ sender: AnyObject) {
         print(textField.text!)
         
         if let name = textField.text {
             kidName = name
         }
         performSegue(withIdentifier: "next", sender: self)
+        
     }
 }

@@ -11,6 +11,7 @@ import CoreData
 
 class BirthdayVC: UIViewController {
     
+    var addKidDelegate: AddKidDelegate?
     @IBOutlet weak var datePicker: UIDatePicker!
     var name: String?
     @IBOutlet weak var doneButton: UIButton!
@@ -42,5 +43,8 @@ class BirthdayVC: UIViewController {
         kid.birthday = birthday
         kid.name = name
         Session.instance.save(kid: kid)
+        addKidDelegate?.addKid(kid: kid)
+        self.dismiss(animated: true, completion: nil)
+        
     }
 }

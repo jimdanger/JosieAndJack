@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        setupiew()
+        setupview()
         
     }
 
@@ -42,9 +42,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-
-        
+    
         UIView.animate(withDuration: 1.1, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
             
             self.labels.forEach {
@@ -52,14 +50,10 @@ class ViewController: UIViewController {
             }
             }, completion: nil)
         
-        
-        //*
-        
-        
     }
     
     
-    func setupiew() {
+    func setupview() {
         
         view.backgroundColor = UIColor.Palette.PlayfullKids.lightBlue()
         
