@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="15"/>
+            <point key="canvasLocation" x="76" y="-1409"/>
         </scene>
         <!--Main Stack ViewVC-->
         <scene sceneID="pNI-fO-wOd">
@@ -88,6 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbb-lm-h5w">
+                                <rect key="frame" x="280" y="35" width="59" height="31"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                 <state key="normal" title="+ add kid">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,7 +97,9 @@
                                     <action selector="addPressed:" destination="2qg-eR-EEt" eventType="touchUpInside" id="43K-Sa-nEn"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tee-r2-uUG"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tee-r2-uUG">
+                                <rect key="frame" x="16" y="79" width="343" height="588"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -201,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Vu-jk-GFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="848"/>
+            <point key="canvasLocation" x="977" y="788"/>
         </scene>
         <!--Birthday-->
         <scene sceneID="Ea4-Rx-bmw">
@@ -271,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6s-WZ-zKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="697"/>
+            <point key="canvasLocation" x="1881" y="788"/>
         </scene>
         <!--Second SplashVC-->
         <scene sceneID="k4t-0T-MeZ">
@@ -311,6 +314,7 @@
                         <outletCollection property="labels" destination="WPd-lP-FJe" collectionClass="NSMutableArray" id="JxL-NO-0J7"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="splashToHardCode" animates="NO" id="wit-Ms-HBJ"/>
                         <segue destination="VrW-d3-CmJ" kind="show" identifier="next" animates="NO" id="Mee-Jm-cYB"/>
+                        <segue destination="Oga-E6-qsM" kind="show" identifier="tableView" id="c1x-6T-ai0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X55-rj-6NS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -379,7 +383,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isM-6o-Udm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="NBQ-YX-NRi" customClass="MainDataSourceDelegate" customModule="JosieAndJack" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="76" y="-721"/>
+            <point key="canvasLocation" x="76" y="-687"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cD7-19-m5d">
@@ -397,7 +401,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caA-2D-ejW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="697"/>
+            <point key="canvasLocation" x="76" y="788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c3U-Aa-k1a">
@@ -415,7 +419,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0Y-9D-RbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="15"/>
+            <point key="canvasLocation" x="76" y="15"/>
         </scene>
     </scenes>
 </document>

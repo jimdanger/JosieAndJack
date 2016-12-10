@@ -37,7 +37,8 @@ struct Constants {
             case
             splashToHardCode =  "splashToHardCode",
             addKid = "addKid",
-            next =  "next"
+            next =  "next",
+            tableView = "tableView"
             
         }
         struct CellReuseIds {

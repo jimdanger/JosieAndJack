@@ -11,22 +11,21 @@ import UIKit
 
 class MainDataSourceDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     
+    var kids: [Kid] = []
     
     // MARK: - UITableViewDataSource
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return kids.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.StoryboardIds.CellReuseIds.main, for: indexPath) as? MainCell else {
             print("ERROR")
             return UITableViewCell()
         }
-        
-        cell.title.text = "hello world"
-        
+        cell.title.text = kids[indexPath.row].name
         return cell
     }
 

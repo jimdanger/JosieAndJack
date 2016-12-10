@@ -20,9 +20,7 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
         kids = Session.instance.fetchAll()
         makeButtons()
         addButtonsToStackView()
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,7 +52,7 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
     func addButtonsToStackView() {
         for button in buttons {
             button.isHidden = true
-            if !stackView.subviews.contains(button){
+            if !stackView.subviews.contains(button) {
                 stackView.addArrangedSubview(button)
             }
         }
@@ -69,7 +67,7 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
         }
     }
     
-    func makeButton(tag: Int, kid:Kid) -> UIButton {
+    func makeButton(tag: Int, kid: Kid) -> UIButton {
         let button: UIButton = UIButton(type: .system)
         guard let name = kid.name else {
             return button
@@ -77,7 +75,7 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
         var text: String = ""
         if let birthday = kid.birthday {
             text = "\(name) is \(birthday.toAge())."
-        }else {
+        } else {
             text = "\(name)"
         }
         
@@ -97,6 +95,8 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
     func buttonPressed(sender: UIButton) {
         print(sender.tag)
         selectedKid = kids[sender.tag]
+        performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: self)
+        
         // do nothing else for now
         /*
         let button: UIButton = UIButton(type: .system)
@@ -107,9 +107,6 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
             button.isHidden = false
         }
         */
-        
-        performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: self)
-        
     }
     
     @IBAction func addPressed(_ sender: AnyObject) {
@@ -118,10 +115,12 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? UINavigationController {
-            if let firstvc = vc.viewControllers[0] as? NameKidVC { // TODO: protect against empty array
+            if let firstvc = vc.viewControllers[0] as? NameKidVC {
                 firstvc.addKidDelegate = self
             }
         }
+        
+        if segue.destination is MainVC { /* complete this later */ }
         
         if let vc = segue.destination as? DetailVC {
             if let thisKid = selectedKid {
@@ -135,7 +134,7 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
         kids.append(kid)
         let button = makeButton(tag: buttons.count, kid: kid)
         buttons.append(button)
-        UIView.animate(withDuration: 0.3){
+        UIView.animate(withDuration: 0.3) {
             self.stackView.addArrangedSubview(button)
         }
     }

@@ -41,8 +41,13 @@ class SecondSplashVC: UIViewController {
         animateLabels()        
     }
     
-    func goToNextView(){
-        performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: nil)
+    func goToNextView() {
+        
+        if Session.instance.fetchAll().count > 5 {
+            performSegue(withIdentifier: Constants.StoryboardIds.Segues.tableView.rawValue, sender: self)
+        } else {
+            performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: nil)
+        }
     }
     
     func animateLabels() {
