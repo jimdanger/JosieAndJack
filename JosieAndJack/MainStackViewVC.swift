@@ -12,6 +12,7 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
     
     @IBOutlet weak var stackView: UIStackView!
     var kids: [Kid] = []
+    var selectedKid: Kid?
     var buttons: [UIButton] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +20,19 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
         kids = Session.instance.fetchAll()
         makeButtons()
         addButtonsToStackView()
+        
     }
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -38,6 +44,10 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
             }, completion: nil)
         
         
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
 
     // MARK: - view
@@ -84,9 +94,9 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
         return button
     }
     
-    func buttonPressed(sender: UIButton){
+    func buttonPressed(sender: UIButton) {
         print(sender.tag)
-        
+        selectedKid = kids[sender.tag]
         // do nothing else for now
         /*
         let button: UIButton = UIButton(type: .system)
@@ -97,11 +107,13 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
             button.isHidden = false
         }
         */
+        
+        performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: self)
+        
     }
     
     @IBAction func addPressed(_ sender: AnyObject) {
-        performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: self)
-        
+        performSegue(withIdentifier: Constants.StoryboardIds.Segues.addKid.rawValue, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -110,13 +122,25 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
                 firstvc.addKidDelegate = self
             }
         }
+        
+        if let vc = segue.destination as? DetailVC {
+            if let thisKid = selectedKid {
+                vc.kid = thisKid
+            }
+        }
     }
     
+    // MARK: AddKidDelegate method: 
     func addKid(kid: Kid) {
+        kids.append(kid)
         let button = makeButton(tag: buttons.count, kid: kid)
         buttons.append(button)
         UIView.animate(withDuration: 0.3){
             self.stackView.addArrangedSubview(button)
         }
     }
+    
+    
+    
+    
 }

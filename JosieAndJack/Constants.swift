@@ -34,6 +34,7 @@ struct Constants {
         enum Segues: String {
             case
             splashToHardCode =  "splashToHardCode",
+            addKid = "addKid",
             next =  "next"
             
         }
