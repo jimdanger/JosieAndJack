@@ -5,6 +5,8 @@
 //  Created by Jim Wilson on 10/23/16.
 //  Copyright © 2016 Jim Danger, LLC. All rights reserved.
 //
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable line_length
 
 import XCTest
 @testable import JosieAndJack

@@ -9,20 +9,20 @@
 import Foundation
 
 extension Date {
-    
+
     func toString() -> String {
-        
+
         // prints "March 3, 2015"
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.long
         formatter.timeStyle = .none
-        
+
         let dateString = formatter.string(from: self)
-        
+
         return dateString
     }
-    
-    
+
+
     /// Returns the amount of years from another date
     func years(from date: Date) -> Int {
         return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
@@ -64,23 +64,23 @@ extension Date {
     }
     /// Returns a custom time interval description from now, in this format: "5 years, 2 months"
     func toAge() -> String {
-       
+
         let date = self
         let now: Date = Date()
         let yearsOld = now.years(from: date)
         let totalMonthsOld = now.months(from: date)
         let monthsOldRemainder = (totalMonthsOld)-(yearsOld * 12)
-        
+
         // single or plural:
         let monthWord = (monthsOldRemainder == 1 ? "month" : "months")
         let yearWord = (yearsOld == 1 ? "year" : "years")
-        
+
         if totalMonthsOld < 12 {
             return "\((totalMonthsOld)) \(monthWord)"
         }
-        
+
         return "\(yearsOld) \(yearWord), \((totalMonthsOld)-(yearsOld * 12)) \(monthWord)"
-        
+
     }
-    
+
 }

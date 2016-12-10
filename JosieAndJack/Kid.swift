@@ -14,8 +14,8 @@ class Kid {
     /// add more as needed:
         // geolocation
         // notes
-    
-    init(){}
+
+    init() {}
     init(name: String) {
         self.name = name
     }

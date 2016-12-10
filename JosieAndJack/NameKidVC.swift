@@ -22,28 +22,34 @@ class NameKidVC: UIViewController {
     
     func setupView() {
         view.backgroundColor = UIColor.Palette.PlayfullKids.lightBlue()
-        nextButton.backgroundColor = UIColor.Palette.PlayfullKids.pink()
-       
+        nextButton.stylePrimary()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if let vc = segue.destination as? BirthdayVC {
             vc.name = kidName
             vc.addKidDelegate = addKidDelegate
         }
     }
-  
+
     // MARK: - Buttons
-    @IBAction func nextPressed(_ sender: AnyObject) {
-        print(textField.text!)
+    @IBAction func nextPressed(_ sender: Any) {
         
+        guard let text = textField.text else {
+            nextButton.shake()
+            return
+        }
+        if text.isEmpty {
+            nextButton.shake()
+            return
+        }
         if let name = textField.text {
             kidName = name
         }
