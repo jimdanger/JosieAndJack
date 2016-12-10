@@ -16,36 +16,73 @@ class NameKidVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        Session.instance.bark()
+
         setupView()
     }
     
     func setupView() {
         view.backgroundColor = UIColor.Palette.PlayfullKids.lightBlue()
-        nextButton.backgroundColor = UIColor.Palette.PlayfullKids.pink()
-       
+        nextButton.stylePrimary()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if let vc = segue.destination as? BirthdayVC {
            vc.name = kidName
         }
     }
- 
+
     // MARK: - Buttons
     @IBAction func nextPressed(_ sender: Any) {
-        print(textField.text!)
         
+        guard let text = textField.text else {
+            nextButton.shake()
+            return
+        }
+        if text.isEmpty {
+            nextButton.shake()
+            return
+        }
         if let name = textField.text {
             kidName = name
         }
         performSegue(withIdentifier: "next", sender: self)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

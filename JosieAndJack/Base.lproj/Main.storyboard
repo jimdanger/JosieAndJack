@@ -99,35 +99,34 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiB-sp-t0Q">
-                                <rect key="frame" x="-4" y="163.5" width="383" height="40"/>
+                                <rect key="frame" x="26" y="163.5" width="323" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.042789684448148457" blue="0.89062641766537676" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="32B-nj-GFn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
-                                <state key="normal" title="Next">
+                                <state key="normal" title="next">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextPressed:" destination="2LE-RR-Tm1" eventType="touchUpInside" id="G6y-E2-4B5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bpa-xx-bfT" firstAttribute="leading" secondItem="KhG-GX-9N8" secondAttribute="leadingMargin" constant="10" id="DqX-XF-iIf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bpa-xx-bfT" secondAttribute="trailing" constant="10" id="KDh-js-5Nw"/>
-                            <constraint firstItem="hiB-sp-t0Q" firstAttribute="leading" secondItem="KhG-GX-9N8" secondAttribute="leadingMargin" constant="-20" id="M1O-JV-ccs"/>
                             <constraint firstItem="bpa-xx-bfT" firstAttribute="top" secondItem="gdy-IW-vPh" secondAttribute="bottom" constant="8" id="MKB-Rg-YpE"/>
                             <constraint firstItem="gdy-IW-vPh" firstAttribute="top" secondItem="xVn-hy-O71" secondAttribute="bottom" constant="21" id="NO1-cz-uiq"/>
                             <constraint firstItem="hiB-sp-t0Q" firstAttribute="top" secondItem="bpa-xx-bfT" secondAttribute="bottom" constant="22" id="Saw-cM-ear"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hiB-sp-t0Q" secondAttribute="trailing" constant="-20" id="eDw-xd-cP8"/>
                             <constraint firstItem="gdy-IW-vPh" firstAttribute="centerX" secondItem="KhG-GX-9N8" secondAttribute="centerX" id="fgs-Mr-6Q7"/>
+                            <constraint firstItem="hiB-sp-t0Q" firstAttribute="width" secondItem="bpa-xx-bfT" secondAttribute="width" id="jjr-NG-bWJ"/>
+                            <constraint firstItem="hiB-sp-t0Q" firstAttribute="centerX" secondItem="KhG-GX-9N8" secondAttribute="centerX" id="nva-7v-FzG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Name" id="FXg-7C-5gz">
-                        <barButtonItem key="rightBarButtonItem" title="next" id="WQp-gr-dbR">
-                            <connections>
-                                <action selector="nextPressed:" destination="2LE-RR-Tm1" id="se7-7n-dhj"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="anS-X1-smw"/>
                     </navigationItem>
                     <connections>
                         <outlet property="nextButton" destination="hiB-sp-t0Q" id="rfp-s4-wLm"/>
@@ -167,7 +166,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOz-ZY-9kK">
-                                <rect key="frame" x="0.0" y="327.5" width="375" height="40"/>
+                                <rect key="frame" x="16" y="341.5" width="343" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.042789684449999997" blue="0.89062641769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ac2-nt-fUM"/>
@@ -184,17 +183,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nN3-ms-MQd" firstAttribute="top" secondItem="j1I-P6-yyf" secondAttribute="bottom" constant="21" id="12v-j7-JBv"/>
-                            <constraint firstAttribute="trailing" secondItem="BOz-ZY-9kK" secondAttribute="trailing" id="Ocl-I1-7Oh"/>
+                            <constraint firstItem="BOz-ZY-9kK" firstAttribute="centerX" secondItem="SS5-Dc-Xmb" secondAttribute="centerX" id="Jos-gX-yu2"/>
+                            <constraint firstItem="BOz-ZY-9kK" firstAttribute="width" secondItem="gIW-u5-IQg" secondAttribute="width" id="VNt-a8-8d4"/>
                             <constraint firstItem="gIW-u5-IQg" firstAttribute="leading" secondItem="SS5-Dc-Xmb" secondAttribute="leadingMargin" id="Yqh-SG-9Mf"/>
-                            <constraint firstItem="BOz-ZY-9kK" firstAttribute="leading" secondItem="SS5-Dc-Xmb" secondAttribute="leading" id="aQe-1g-ET3"/>
                             <constraint firstItem="gIW-u5-IQg" firstAttribute="top" secondItem="nN3-ms-MQd" secondAttribute="bottom" constant="15" id="j9B-vq-fYT"/>
-                            <constraint firstItem="BOz-ZY-9kK" firstAttribute="top" secondItem="gIW-u5-IQg" secondAttribute="bottom" constant="-7" id="quL-Ek-NJI"/>
+                            <constraint firstItem="BOz-ZY-9kK" firstAttribute="top" secondItem="gIW-u5-IQg" secondAttribute="bottom" constant="7" id="quL-Ek-NJI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gIW-u5-IQg" secondAttribute="trailing" id="v6x-fC-9td"/>
                             <constraint firstItem="nN3-ms-MQd" firstAttribute="centerX" secondItem="SS5-Dc-Xmb" secondAttribute="centerX" id="ywe-Gm-G7W"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Birthday" id="kny-G7-Ks8">
-                        <barButtonItem key="rightBarButtonItem" title="skip" id="tKF-sq-AnB"/>
+                        <barButtonItem key="rightBarButtonItem" title="skip" id="tKF-sq-AnB">
+                            <connections>
+                                <action selector="skipPressed:" destination="iLl-ke-Cas" id="5Nj-ge-fp9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="gIW-u5-IQg" id="Jay-Wy-UtO"/>

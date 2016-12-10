@@ -1,4 +1,4 @@
-    //
+//
 //  BirthdayVC.swift
 //  JosieAndJack
 //
@@ -10,41 +10,47 @@ import UIKit
 import CoreData
 
 class BirthdayVC: UIViewController {
-    
+
     @IBOutlet weak var datePicker: UIDatePicker!
-    var name: String?
     @IBOutlet weak var doneButton: UIButton!
-    
+    var name: String?
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         print(Session.instance.fetchAll())
         setupView()
     }
-    
-    func setupView(){
+
+    func setupView() {
         view.backgroundColor = UIColor.Palette.PlayfullKids.lightBlue()
-        doneButton.backgroundColor = UIColor.Palette.PlayfullKids.pink()
-        
-    
+        doneButton.stylePrimary()
+        datePicker.maximumDate = Date()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
-    
 
-    
+
     @IBAction func donePressed(_ sender: Any) {
-        done()
+        done(shouldSetBirthday: true)
     }
     
-    func done() {
-        let birthday:Date = datePicker.date
+    @IBAction func skipPressed(_ sender: Any) {
+        done(shouldSetBirthday: false)
+    }
+    
+    func done(shouldSetBirthday: Bool) {
         let kid = Kid()
-        kid.birthday = birthday
         kid.name = name
+        if shouldSetBirthday {
+            let birthday: Date = datePicker.date
+            kid.birthday = birthday
+        }
         Session.instance.save(kid: kid)
+        // segue to main.
+        let _ = ""
     }
 }

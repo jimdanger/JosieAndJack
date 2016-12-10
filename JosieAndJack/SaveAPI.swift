@@ -33,7 +33,7 @@ class SaveAPI {
         
         do {
             try managedContext.save()
-        } catch let error as NSError  {
+        } catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
@@ -53,8 +53,10 @@ class SaveAPI {
         do {
             let results =
                 try managedContext.fetch(fetchRequest)
-            let kidsFromCoreData = results as! [NSManagedObject]
-            print(kidsFromCoreData)
+            guard let kidsFromCoreData = results as? [NSManagedObject] else {
+                print("Could not unwrap as results from core data fetch")
+                throw NSError(domain: "String", code: 000, userInfo: ["message":"Could not unwrap as results from core data fetch"])
+            }
             for kidcore in kidsFromCoreData {
                 let kid = Kid()
                 if let name = kidcore.value(forKey: "name") as? String {

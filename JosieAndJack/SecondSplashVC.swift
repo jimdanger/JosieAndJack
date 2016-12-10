@@ -43,7 +43,7 @@ class SecondSplashVC: UIViewController {
         
     }
     
-    func goToNextView(){
+    func goToNextView() {
         performSegue(withIdentifier: Constants.Segues.splashToMain, sender: nil)
     }
     

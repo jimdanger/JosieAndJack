@@ -5,11 +5,12 @@
 //  Created by Jim Wilson on 10/23/16.
 //  Copyright © 2016 Jim Danger, LLC. All rights reserved.
 //
+// swiftlint:disable line_length
+// swiftlint:disable nesting  
 
 import Foundation
 import UIKit
 
-// swiftlint:disable line_length
 extension UIColor {
     
     struct Palette {
