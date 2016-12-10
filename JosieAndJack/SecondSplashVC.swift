@@ -43,8 +43,8 @@ class SecondSplashVC: UIViewController {
         
     }
     
-    func goToNextView() {
-        performSegue(withIdentifier: Constants.Segues.splashToMain, sender: nil)
+    func goToNextView(){
+        performSegue(withIdentifier: Constants.StoryboardIds.Segues.splashToMain, sender: nil)
     }
     
     func animateLabels() {

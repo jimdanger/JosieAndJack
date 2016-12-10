@@ -16,7 +16,6 @@ class NameKidVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupView()
     }
     
@@ -55,34 +54,3 @@ class NameKidVC: UIViewController {
         performSegue(withIdentifier: "next", sender: self)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

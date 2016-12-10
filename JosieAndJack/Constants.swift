@@ -27,9 +27,20 @@ struct Constants {
     }
 
 
-    struct Segues {
 
-        static let splashToMain =  "splashToMain"
+    
+    struct StoryboardIds {
+        
+        struct Segues {
+            
+            static let splashToMain =  "splashToMain"
+        }
+        struct CellReuseIds {
+            
+            static let main =  "MainCell"
+        }
+        
+        
     }
 
     struct GeoLocations {
