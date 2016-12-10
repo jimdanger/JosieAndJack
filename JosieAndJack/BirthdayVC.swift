@@ -46,8 +46,7 @@ class BirthdayVC: UIViewController {
         let kid = Kid()
         kid.name = name
         if shouldSetBirthday {
-            let birthday: Date = datePicker.date
-            kid.birthday = birthday
+            kid.birthday = datePicker.date
         }
         Session.instance.save(kid: kid)
         // segue to main.
