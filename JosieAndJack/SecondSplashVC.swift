@@ -71,7 +71,7 @@ class SecondSplashVC: UIViewController {
             
         )
     
-    
+
     }
    
 
