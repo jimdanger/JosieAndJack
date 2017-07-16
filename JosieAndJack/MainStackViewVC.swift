@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainStackViewVC: UIViewController, AddKidDelegate {
+class MainStackViewVC: UIViewController, AddKidDelegate, KidListViewDelegate {
     
     @IBOutlet weak var stackView: UIStackView!
     var kids: [Kid] = []
@@ -126,6 +126,7 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
             if let thisKid = selectedKid {
                 vc.kid = thisKid
             }
+            vc.parentView = self
         }
     }
     
@@ -137,6 +138,18 @@ class MainStackViewVC: UIViewController, AddKidDelegate {
         UIView.animate(withDuration: 0.3) {
             self.stackView.addArrangedSubview(button)
         }
+    }
+
+    // MARK: KidListViewDelegate method:
+    func refreshList() {
+
+        kids = Session.instance.fetchAll()
+        for button in buttons {
+            button.removeFromSuperview()
+        }
+        buttons = []
+        makeButtons()
+        addButtonsToStackView()
     }
     
     

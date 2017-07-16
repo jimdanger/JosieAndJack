@@ -11,11 +11,7 @@ import CoreData
 import UIKit
 
 class SaveAPI {
-    
-    func bark() {
-        print("woof")
-    }
-    
+
     func save(kid: Kid) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -71,6 +67,43 @@ class SaveAPI {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         return kids
+    }
+
+    func delete(kid: Kid) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            print("WARNING: could not save to core data")
+            return
+        }
+
+        guard let name = kid.name else {
+            print("WARNING: could not save to core data - no name. name is used as key.")
+            return
+        }
+
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "KidCore")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+
+
+        var kidsToDelete: [NSManagedObject] = []// fetch returns an array, even if only 1 element.
+        do {
+            // swiftlint:disable force_cast
+            kidsToDelete = try managedObjectContext.fetch(fetchRequest) as! [NSManagedObject]
+            // swiftlint:enable force_cast
+        } catch {
+            fatalError("Failed to fetch kid: \(error)")
+        }
+
+        for kid in kidsToDelete {
+            managedObjectContext.delete(kid)
+        }
+
+        do {
+            try managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete \(error), \(error.userInfo)")
+        }
     }
 }
 

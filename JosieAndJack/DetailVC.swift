@@ -21,6 +21,7 @@ class DetailVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
 
     var kid: Kid?
+    var parentView: KidListViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,20 @@ class DetailVC: UIViewController, UITextViewDelegate {
         print("save")
     }
 
+
+    @IBAction func deletePressed(_ sender: Any) {
+        deleteKid()
+    }
+
+    func deleteKid() {
+
+        if let k = kid {
+            Session.instance.delete(kid: k)
+        }
+        parentView?.refreshList()
+        _ = navigationController?.popViewController(animated: true)
+
+    }
 
 
     // MARK:- keyboard:

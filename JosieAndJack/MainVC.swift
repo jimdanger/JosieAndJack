@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, KidListViewDelegate {
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -31,14 +31,20 @@ class MainVC: UIViewController {
         performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: self)
     }
 
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if let vc = segue.destination as? DetailVC {
             if let thisKid = selectedKid {
                 vc.kid = thisKid
             }
+            vc.parentView = self
         }
+    }
+
+    // MARK: KidListViewDelegate method:
+    func refreshList() {
+        dataSourceAndDelegate.kids = Session.instance.fetchAll()
+        tableView.reloadData()
     }
 
 }

@@ -457,6 +457,9 @@
                                                 <state key="normal" title="Delete this kid">
                                                     <color key="titleColor" red="1" green="0.018028413869999999" blue="0.072652244369999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="deletePressed:" destination="fIZ-xm-aq4" eventType="touchUpInside" id="wlb-5P-iha"/>
+                                                </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-84-kAf">
                                                 <rect key="frame" x="25" y="182" width="51" height="31"/>
