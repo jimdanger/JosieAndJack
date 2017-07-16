@@ -116,7 +116,7 @@
                     <connections>
                         <outlet property="stackView" destination="tee-r2-uUG" id="ndI-15-b9w"/>
                         <segue destination="IJL-qp-pft" kind="show" identifier="addKid" id="c84-Mq-NIv"/>
-                        <segue destination="fIZ-xm-aq4" kind="show" identifier="next" action="showDetailViewController:sender:" id="JXU-rv-Cmi"/>
+                        <segue destination="fIZ-xm-aq4" kind="push" identifier="next" id="JXU-rv-Cmi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mz1-g3-Ly1" userLabel="First Responder" sceneMemberID="firstResponder"/>
