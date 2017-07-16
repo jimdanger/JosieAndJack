@@ -83,4 +83,30 @@ extension Date {
 
     }
 
+
+    /// Returns a custom time interval description from now, in a format parents use to describe their young children in USA, e.g., '16 weeks.', '18 months', etc.
+    func toBabyAge() -> String {
+
+        // TODO: FIX this, this simply mirrors toAge() above at the moment.
+
+        let date = self
+        let now: Date = Date()
+        let yearsOld = now.years(from: date)
+        let totalMonthsOld = now.months(from: date)
+        let monthsOldRemainder = (totalMonthsOld)-(yearsOld * 12)
+
+        // single or plural:
+        let monthWord = (monthsOldRemainder == 1 ? "month" : "months")
+        let yearWord = (yearsOld == 1 ? "year" : "years")
+
+        if totalMonthsOld < 12 {
+            return "\((totalMonthsOld)) \(monthWord)"
+        }
+
+        return "\(yearsOld) \(yearWord), \((totalMonthsOld)-(yearsOld * 12)) \(monthWord)"
+
+    }
+
+
+
 }

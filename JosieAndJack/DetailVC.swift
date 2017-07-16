@@ -6,34 +6,111 @@
 //  Copyright © 2016 Jim Danger, LLC. All rights reserved.
 //
 
+
 import UIKit
 
-class DetailVC: UIViewController {
+class DetailVC: UIViewController, UITextViewDelegate {
 
-    var kid: Kid?
-    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var age: UILabel!
+    @IBOutlet weak var ageDetail: UILabel!
+    @IBOutlet weak var notes: UITextView!
+    @IBOutlet weak var remindSwitch: UISwitch!
+    @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
+
+    var kid: Kid = Kid()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("DetailVC")
-        // Do any additional setup after loading the view.
-        
+        setupView()
+        setupKeyboardObservers()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupView() {
+        scrollView.isScrollEnabled = false
+
+        navigationItem.title = kid.name
+
+        if let birthday = kid.birthday {
+            age.text = "\(String(describing: kid.name)) is \(birthday.toAge()) old."
+            ageDetail.text = "a.k.a. \"\(birthday.toBabyAge())\""
+        } else {
+            age.text = "\(String(describing: kid.name))"
+            ageDetail.text = "" // blank
+        }
     }
-    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func switchToggled(_ sender: Any) {
+        print(remindSwitch.isOn)
     }
-    */
 
+
+    // MARK:- buttons:
+
+    func dismissKeyboard() {
+        notes.resignFirstResponder()
+    }
+    func save() {
+        print("save")
+    }
+
+
+
+    // MARK:- keyboard:
+    func setupKeyboardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
+    }
+
+
+    func keyboardWillShow(notification: NSNotification) {
+        print("keyboardWillShow")
+        scrollView.isScrollEnabled = true
+
+        var keyboardHeight: CGFloat = 258.0 // fallback in case ' if let ...' fails to set exact value
+        var keyboardAnimationTime: TimeInterval = 0.25 // fallback in case ' if let ...' fails to set value
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            keyboardHeight = keyboardSize.height
+        }
+        if let animationTime = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval) {
+            keyboardAnimationTime = animationTime
+        }
+        bottomConstraint.constant = keyboardHeight
+
+        // determine how much to scroll, if at all:
+        let screenHeight = view.frame.size.height
+        let bottomTextFieldDistanceFromBottom = screenHeight - (notes.frame.origin.y + notes.frame.size.height)
+        let buffer: CGFloat = 10.0
+        var distanceToMove: CGFloat = 0.0
+        if keyboardHeight > (bottomTextFieldDistanceFromBottom - buffer) {
+            distanceToMove = ((keyboardHeight - bottomTextFieldDistanceFromBottom) + (buffer * 3))
+        }
+        UIView.animate(withDuration: keyboardAnimationTime) {
+            self.scrollView.contentOffset.y = distanceToMove
+        }
+        rightBarButtonItem.title = "Dismiss Keyboard"
+        rightBarButtonItem.action = #selector(dismissKeyboard)
+
+    }
+
+
+    func keyboardWillHide (notification: NSNotification) {
+        print("keyboardWillHide")
+        scrollView.isScrollEnabled = false
+
+        var keyboardAnimationTime: TimeInterval = 0.25
+        if let animationTime = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval) {
+            keyboardAnimationTime = animationTime
+        }
+        UIView.animate(withDuration: keyboardAnimationTime) {
+            self.scrollView.contentOffset.y = 0.0
+            self.bottomConstraint.constant = 0.0
+        }
+        rightBarButtonItem.title = "Save"
+        rightBarButtonItem.action = #selector(save)
+    }
 }
