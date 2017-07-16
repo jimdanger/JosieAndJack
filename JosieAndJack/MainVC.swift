@@ -10,20 +10,35 @@ import UIKit
 
 class MainVC: UIViewController {
 
-    // NOTE: Abandoning this and using the StackView method instead for now.  
-    
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var dataSourceAndDelegate: MainDataSourceDelegate!
-    
+    var selectedKid: Kid?
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSourceAndDelegate.kids = Session.instance.fetchAll()
+        dataSourceAndDelegate.mainView = self
         tableView.dataSource = dataSourceAndDelegate
         tableView.delegate = dataSourceAndDelegate
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+
+    func goToDetail(kid: Kid) {
+        selectedKid = kid
+        performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: self)
+    }
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if let vc = segue.destination as? DetailVC {
+            if let thisKid = selectedKid {
+                vc.kid = thisKid
+            }
+        }
+    }
+
 }

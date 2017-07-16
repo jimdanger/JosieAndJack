@@ -20,7 +20,7 @@ class DetailVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var remindSwitch: UISwitch!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
 
-    var kid: Kid = Kid()
+    var kid: Kid?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +30,20 @@ class DetailVC: UIViewController, UITextViewDelegate {
 
     func setupView() {
         scrollView.isScrollEnabled = false
+        bindViewElements()
+    }
 
-        navigationItem.title = kid.name
 
-        if let birthday = kid.birthday {
-            age.text = "\(String(describing: kid.name)) is \(birthday.toAge()) old."
-            ageDetail.text = "a.k.a. \"\(birthday.toBabyAge())\""
+    func bindViewElements() {
+
+        navigationItem.title = kid?.name
+
+        if let birthday = kid?.birthday {
+            age.text = birthday.toAge()
+            ageDetail.text = "born: \(birthday.toString())."
         } else {
-            age.text = "\(String(describing: kid.name))"
-            ageDetail.text = "" // blank
+            age.text = kid?.name
+            ageDetail.text = "" // blank if no bday
         }
     }
 

@@ -12,14 +12,14 @@ import UIKit
 class MainDataSourceDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     var kids: [Kid] = []
-    
+    var mainView: MainVC?
+
     // MARK: - UITableViewDataSource
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return kids.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.StoryboardIds.CellReuseIds.main, for: indexPath) as? MainCell else {
             print("ERROR")
@@ -28,9 +28,12 @@ class MainDataSourceDelegate: NSObject, UITableViewDataSource, UITableViewDelega
         cell.title.text = kids[indexPath.row].name
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = mainView {
+            vc.goToDetail(kid: kids[indexPath.row])
+        }
+    }
 
-    
-    
-    
     
 }
