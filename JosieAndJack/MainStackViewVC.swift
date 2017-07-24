@@ -69,16 +69,9 @@ class MainStackViewVC: UIViewController, AddKidDelegate, KidListViewDelegate {
     
     func makeButton(tag: Int, kid: Kid) -> UIButton {
         let button: UIButton = UIButton(type: .system)
-        guard let name = kid.name else {
-            return button
-        }
-        var text: String = ""
-        if let birthday = kid.birthday {
-            text = "\(name) is \(birthday.toAge())."
-        } else {
-            text = "\(name)"
-        }
         
+        let text: String = kid.buttonText
+
         if let font = UIFont(name: "Marker Felt", size: 15.0) {
             let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.black ]
             let title: NSAttributedString = NSAttributedString(string: text, attributes: attributes)

@@ -54,7 +54,7 @@ class SaveAPI {
                 throw NSError(domain: "String", code: 000, userInfo: ["message":"Could not unwrap as results from core data fetch"])
             }
             for kidcore in kidsFromCoreData {
-                let kid = Kid()
+                let kid = Kid(name: "")
                 if let name = kidcore.value(forKey: "name") as? String {
                     kid.name = name
                 }
@@ -78,14 +78,9 @@ class SaveAPI {
             return
         }
         
-        guard let name = kid.name else {
-            print("WARNING: could not save to core data - no name. name is used as key.")
-            return
-        }
         let managedObjectContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "KidCore")
-        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
-        
+        fetchRequest.predicate = NSPredicate(format: "name == %@", kid.name)
         
         var kidsCoresToUpdate: [NSManagedObject] = []// fetch returns an array, even if only 1 element.
         do {
@@ -113,16 +108,10 @@ class SaveAPI {
             print("WARNING: could not save to core data")
             return
         }
-
-        guard let name = kid.name else {
-            print("WARNING: could not save to core data - no name. name is used as key.")
-            return
-        }
-
         let managedObjectContext = appDelegate.persistentContainer.viewContext
 
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "KidCore")
-        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        fetchRequest.predicate = NSPredicate(format: "name == %@", kid.name)
 
 
         var kidsToDelete: [NSManagedObject] = []// fetch returns an array, even if only 1 element.

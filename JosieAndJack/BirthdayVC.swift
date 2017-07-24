@@ -26,7 +26,6 @@ class BirthdayVC: UIViewController {
     func setupView() {
         view.backgroundColor = UIColor.Palette.PlayfullKids.lightBlue()
         doneButton.stylePrimary()
-        datePicker.maximumDate = Date()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,14 +42,16 @@ class BirthdayVC: UIViewController {
     }
     
     func done(shouldSetBirthday: Bool) {
-        let kid = Kid()
-        kid.name = name
+        guard let n = name else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        let kid = Kid(name: n)
         if shouldSetBirthday {
             kid.birthday = datePicker.date
         }
         Session.instance.save(kid: kid)
         addKidDelegate?.addKid(kid: kid)
         self.dismiss(animated: true, completion: nil)
-        
     }
 }
