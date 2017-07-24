@@ -72,14 +72,16 @@ class MainStackViewVC: UIViewController, AddKidDelegate, KidListViewDelegate {
         
         let text: String = kid.buttonText
 
-        if let font = UIFont(name: "Marker Felt", size: 15.0) {
+        if let font = UIFont(name: "Marker Felt", size: 20.0) {
             let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.black ]
             let title: NSAttributedString = NSAttributedString(string: text, attributes: attributes)
             button.setAttributedTitle(title, for: .normal)
         } else {
             button.setTitle(kid.name, for: .normal)
         }
-        
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.lineBreakMode = .byWordWrapping
+        button.titleLabel?.textAlignment = .center
         button.tag = tag
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button

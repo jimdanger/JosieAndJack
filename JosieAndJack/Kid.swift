@@ -40,7 +40,7 @@ class Kid {
         } else {
             text = "\(self.name)"
         }
-        return text
+        return "🤰" + text + "🤰"
     }
     
     
