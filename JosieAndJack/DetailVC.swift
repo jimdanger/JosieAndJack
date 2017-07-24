@@ -92,7 +92,26 @@ class DetailVC: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func deletePressed(_ sender: Any) {
-        deleteKid()
+        showConfirmationPrompt()
+        
+    }
+    
+    func showConfirmationPrompt() {
+        let alert = UIAlertController(title: title,
+                                      message: "Are you sure?",
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction(title: "Go back",
+                                         style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Yes, delete",
+                                         style: .destructive,
+                                         handler: { (alert) in
+                                            self.deleteKid()
+            })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func deleteKid() {
