@@ -11,9 +11,7 @@ import Foundation
 class Kid {
     var name: String?
     var birthday: Date?
-    /// add more as needed:
-        // geolocation
-        // notes
+    var notes: String?
 
     init() {}
     init(name: String) {

@@ -61,6 +61,9 @@ class SaveAPI {
                 if let birthday = kidcore.value(forKey: "birthday") as? Date {
                     kid.birthday = birthday
                 }
+                if let notes = kidcore.value(forKey: "notes") as? String {
+                    kid.notes = notes
+                }
                 kids.append(kid)
             }
         } catch let error as NSError {
@@ -69,6 +72,42 @@ class SaveAPI {
         return kids
     }
 
+    func update(kid: Kid) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            print("WARNING: could not save to core data")
+            return
+        }
+        
+        guard let name = kid.name else {
+            print("WARNING: could not save to core data - no name. name is used as key.")
+            return
+        }
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "KidCore")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        
+        
+        var kidsCoresToUpdate: [NSManagedObject] = []// fetch returns an array, even if only 1 element.
+        do {
+            // swiftlint:disable force_cast
+            kidsCoresToUpdate = try managedObjectContext.fetch(fetchRequest) as! [NSManagedObject]
+            // swiftlint:enable force_cast
+        } catch {
+            fatalError("Failed to fetch kid: \(error)")
+        }
+        
+        for kidcore in kidsCoresToUpdate {
+            kidcore.setValue(kid.notes, forKey: "notes")
+        }
+        
+        do {
+            try managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete \(error), \(error.userInfo)")
+        }
+    }
+    
+    
     func delete(kid: Kid) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             print("WARNING: could not save to core data")
