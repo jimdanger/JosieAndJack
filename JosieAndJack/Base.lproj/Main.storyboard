@@ -434,20 +434,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Remind me when I'm nearby:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvy-bT-2TN">
-                                                <rect key="frame" x="25" y="152.5" width="233" height="22"/>
-                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="00L-fN-Cyk">
-                                                <rect key="frame" x="25" y="274" width="325" height="239"/>
+                                                <rect key="frame" x="25" y="171.5" width="325" height="341.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Z8-CO-wtP">
-                                                <rect key="frame" x="25" y="245" width="37" height="15.5"/>
+                                                <rect key="frame" x="25" y="142.5" width="37" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -458,15 +452,9 @@
                                                     <color key="titleColor" red="1" green="0.018028413869999999" blue="0.072652244369999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="deletePressed:" destination="fIZ-xm-aq4" eventType="touchUpInside" id="wlb-5P-iha"/>
+                                                    <action selector="deletePressed:" destination="fIZ-xm-aq4" eventType="touchUpInside" id="aRe-4d-rSi"/>
                                                 </connections>
                                             </button>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-84-kAf">
-                                                <rect key="frame" x="25" y="182" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="switchToggled:" destination="fIZ-xm-aq4" eventType="valueChanged" id="Q1G-rv-6Z2"/>
-                                                </connections>
-                                            </switch>
                                         </subviews>
                                         <color key="backgroundColor" red="0.60481971499999998" green="0.82021373509999995" blue="0.82969802619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -476,18 +464,13 @@
                                             <constraint firstAttribute="bottom" secondItem="wLn-ab-Cgt" secondAttribute="bottom" constant="25" id="FsY-ag-kem"/>
                                             <constraint firstItem="wLn-ab-Cgt" firstAttribute="centerX" secondItem="vAP-Pk-Pk6" secondAttribute="centerX" id="KAX-Om-56V"/>
                                             <constraint firstItem="00L-fN-Cyk" firstAttribute="leading" secondItem="vAP-Pk-Pk6" secondAttribute="leading" constant="25" id="L0u-3f-e7y"/>
-                                            <constraint firstItem="dvy-bT-2TN" firstAttribute="top" secondItem="pNO-LG-ZLE" secondAttribute="bottom" constant="70" id="SY0-35-p4x"/>
-                                            <constraint firstItem="9Z8-CO-wtP" firstAttribute="leading" secondItem="VK4-84-kAf" secondAttribute="leading" id="Wbz-3e-qPy"/>
-                                            <constraint firstItem="dvy-bT-2TN" firstAttribute="leading" secondItem="vAP-Pk-Pk6" secondAttribute="leading" constant="25" id="Ybk-G7-0b2"/>
-                                            <constraint firstItem="VK4-84-kAf" firstAttribute="top" secondItem="dvy-bT-2TN" secondAttribute="bottom" constant="7.5" id="crT-9X-v25"/>
+                                            <constraint firstItem="9Z8-CO-wtP" firstAttribute="leading" secondItem="pNO-LG-ZLE" secondAttribute="leading" id="PlJ-oK-BBn"/>
                                             <constraint firstItem="eBx-NF-GXk" firstAttribute="leading" secondItem="vAP-Pk-Pk6" secondAttribute="leading" constant="25" id="fTp-Et-Rmj"/>
                                             <constraint firstAttribute="trailing" secondItem="pNO-LG-ZLE" secondAttribute="trailing" constant="25" id="gqH-fb-nmj"/>
                                             <constraint firstItem="pNO-LG-ZLE" firstAttribute="top" secondItem="eBx-NF-GXk" secondAttribute="bottom" constant="20" id="hbW-Ba-Hyq"/>
-                                            <constraint firstItem="9Z8-CO-wtP" firstAttribute="top" secondItem="VK4-84-kAf" secondAttribute="bottom" constant="32" id="i6b-S7-TI4"/>
                                             <constraint firstItem="wLn-ab-Cgt" firstAttribute="top" secondItem="00L-fN-Cyk" secondAttribute="bottom" constant="35" id="jaW-Xg-mUp"/>
                                             <constraint firstItem="eBx-NF-GXk" firstAttribute="top" secondItem="vAP-Pk-Pk6" secondAttribute="top" constant="25" id="ou0-dG-cam"/>
-                                            <constraint firstAttribute="trailing" secondItem="dvy-bT-2TN" secondAttribute="trailing" constant="117" id="p4g-yL-NeB"/>
-                                            <constraint firstItem="VK4-84-kAf" firstAttribute="leading" secondItem="dvy-bT-2TN" secondAttribute="leading" id="plB-FG-05S"/>
+                                            <constraint firstItem="9Z8-CO-wtP" firstAttribute="top" secondItem="pNO-LG-ZLE" secondAttribute="bottom" constant="60" id="vM7-Ab-DpK"/>
                                             <constraint firstAttribute="trailing" secondItem="00L-fN-Cyk" secondAttribute="trailing" constant="25" id="xKv-fE-TnO"/>
                                         </constraints>
                                     </view>
@@ -519,7 +502,6 @@
                         <outlet property="ageDetail" destination="pNO-LG-ZLE" id="w1p-lR-Dsx"/>
                         <outlet property="bottomConstraint" destination="V3M-g5-6ah" id="Q3T-w6-tR0"/>
                         <outlet property="notes" destination="00L-fN-Cyk" id="zgc-As-j43"/>
-                        <outlet property="remindSwitch" destination="VK4-84-kAf" id="bdv-bu-LgA"/>
                         <outlet property="rightBarButtonItem" destination="6ZH-U8-DuP" id="lHw-xk-pfg"/>
                         <outlet property="scrollView" destination="1Oc-9f-eAD" id="Q3p-h0-ER9"/>
                     </connections>

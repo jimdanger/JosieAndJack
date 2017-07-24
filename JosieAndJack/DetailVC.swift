@@ -32,6 +32,8 @@ class DetailVC: UIViewController, UITextViewDelegate {
     func setupView() {
         scrollView.isScrollEnabled = false
         bindViewElements()
+        rightBarButtonItem.title = "Save"
+        rightBarButtonItem.action = #selector(save(sender:))
     }
 
 
@@ -59,7 +61,7 @@ class DetailVC: UIViewController, UITextViewDelegate {
     func dismissKeyboard() {
         notes.resignFirstResponder()
     }
-    func save() {
+    func save(sender: UIBarButtonItem) {
         print("save")
     }
 
@@ -131,6 +133,6 @@ class DetailVC: UIViewController, UITextViewDelegate {
             self.bottomConstraint.constant = 0.0
         }
         rightBarButtonItem.title = "Save"
-        rightBarButtonItem.action = #selector(save)
+        rightBarButtonItem.action = #selector(save(sender:))
     }
 }

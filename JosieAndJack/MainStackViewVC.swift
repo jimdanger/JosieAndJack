@@ -151,8 +151,4 @@ class MainStackViewVC: UIViewController, AddKidDelegate, KidListViewDelegate {
         makeButtons()
         addButtonsToStackView()
     }
-    
-    
-    
-    
 }
