@@ -175,7 +175,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Name" id="FXg-7C-5gz">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="anS-X1-smw"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="anS-X1-smw">
+                            <connections>
+                                <action selector="cancelPressed:" destination="2LE-RR-Tm1" id="wBF-NZ-qOO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nextButton" destination="hiB-sp-t0Q" id="rfp-s4-wLm"/>
@@ -185,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Vu-jk-GFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="788"/>
+            <point key="canvasLocation" x="976.79999999999995" y="787.55622188905556"/>
         </scene>
         <!--Birthday-->
         <scene sceneID="Ea4-Rx-bmw">
@@ -322,7 +326,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JgU-rn-xZH" id="rpK-Lx-FaU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeF-Ms-KPP">
