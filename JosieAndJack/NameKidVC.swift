@@ -23,6 +23,7 @@ class NameKidVC: UIViewController {
     func setupView() {
         view.backgroundColor = UIColor.Palette.PlayfullKids.lightBlue()
         nextButton.stylePrimary()
+        textField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
