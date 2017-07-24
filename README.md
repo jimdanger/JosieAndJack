@@ -35,6 +35,6 @@
 
 ## :clipboard: Future plans
 
-* Detail view so user can store notes. ("Jack loves astronauts :rocket:.")
+* Detail view so user can store notes. ("Jack loves astronauts :rocket:.") --> Done! 
 * Notifications for bday reminders.
 * Geolocation region monitoring with location-based notifications. ("Looks like you are near Fred Flintstone's house. Pebbles is 8 months now.")

@@ -34,7 +34,7 @@ class SecondSplashVC: UIViewController {
     
     func goToNextView() {
         
-        if Session.instance.fetchAll().count > 5 {
+        if Session.instance.fetchAll().count > 25 {
             performSegue(withIdentifier: Constants.StoryboardIds.Segues.tableView.rawValue, sender: self)
         } else {
             performSegue(withIdentifier: Constants.StoryboardIds.Segues.next.rawValue, sender: nil)

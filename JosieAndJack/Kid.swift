@@ -12,7 +12,7 @@ class Kid {
     var name: String
     var birthday: Date?
     var notes: String?
-    var born: Bool {
+    var isBorn: Bool {
         guard let unwrappedBirthday = birthday else {
             return false
         }
@@ -20,7 +20,7 @@ class Kid {
     }
     
     var buttonText: String {
-        return born ? getAgeLabel() : getDueDateLabel()
+        return isBorn ? getAgeLabel() : getDueDateLabel()
     }
 
     private func getAgeLabel() -> String {

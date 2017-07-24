@@ -45,22 +45,38 @@ class DetailVC: UIViewController, UITextViewDelegate {
     
     
     func bindViewElements() {
-        
-        navigationItem.title = kid?.name
-        
-        if let birthday = kid?.birthday {
-            age.text = birthday.toAge()
-            ageDetail.text = "born: \(birthday.toString())."
+        guard let k = kid else{
+            return
+        }
+        navigationItem.title = k.name
+
+        if let birthday = k.birthday {
+            if k.isBorn {
+                bindForBirthday(birthday: birthday)
+            } else {
+                bindForDueDate(birthday: birthday)
+            }
         } else {
-            age.text = kid?.name
+            age.text = k.name
             ageDetail.text = "" // blank if no bday
         }
         
-        if let s = kid?.notes {
+        // TODO: refactor this
+        if let s = k.notes {
             notes.text = s
         } else {
             notes.text = ""
         }
+    }
+    
+    func bindForBirthday(birthday: Date) {
+        age.text = birthday.toAge()
+        ageDetail.text = "born: \(birthday.toString())."
+    }
+    
+    func bindForDueDate(birthday: Date) {
+        age.text = kid?.name
+        ageDetail.text = "due \(birthday.toString())"
     }
     
     @IBAction func switchToggled(_ sender: Any) {
