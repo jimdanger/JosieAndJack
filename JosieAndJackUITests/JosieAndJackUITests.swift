@@ -9,6 +9,8 @@
 // swiftlint:disable trailing_whitespace
 
 import XCTest
+import Foundation
+@testable import JosieAndJack
 
 class JosieAndJackUITests: XCTestCase {
         
@@ -30,9 +32,20 @@ class JosieAndJackUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAddKid() {
+
+        XCUIDevice.shared().orientation = .faceUp
+        XCUIDevice.shared().orientation = .faceUp
+
+        let app = XCUIApplication()
+        app.buttons["+ add kid"].tap()
+        
+        let textField = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element
+        textField.tap()
+        textField.typeText("testKid")
+        app.buttons["next"].tap()
+        app.navigationBars["Birthday"].buttons["skip"].tap()
+        let _ = ""
+        XCTAssertNotNil(app.buttons["🤰testKid🤰"])
     }
-    
 }
