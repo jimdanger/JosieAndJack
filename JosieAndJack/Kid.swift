@@ -16,7 +16,7 @@ class Kid {
         guard let unwrappedBirthday = birthday else {
             return false
         }
-        return unwrappedBirthday < Date()
+        return unwrappedBirthday <= Date()
     }
     
     var buttonText: String {

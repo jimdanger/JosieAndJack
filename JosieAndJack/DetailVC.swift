@@ -61,7 +61,7 @@ class DetailVC: UIViewController, UITextViewDelegate {
             ageDetail.text = "" // blank if no bday
         }
         
-        // TODO: refactor this
+        
         if let s = k.notes {
             notes.text = s
         } else {
